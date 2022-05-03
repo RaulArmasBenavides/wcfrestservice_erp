@@ -19,6 +19,11 @@ namespace ServicioWCFRest
         List<Empleado> readAll();
 
 
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "readAlloauth", ResponseFormat = WebMessageFormat.Json)]
+        List<Empleado> readAlloauth();
+
         //[FaultContract(typeof(ExcepcionLDS))]
         //[OperationContract]
         //[WebInvoke(
@@ -45,5 +50,28 @@ namespace ServicioWCFRest
         [OperationContract]
         [WebInvoke(Method = "DELETE", UriTemplate = "delete", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         bool delete(Empleado empleado);
+
+
+
+        [OperationContract(Name = "GetSampleMethod_With_OAuth")]
+        [WebGet(UriTemplate = "GetSampleMethod_With_OAuth/inputStr/{name}")]
+        string GetSampleMethod_With_OAuth(string name);
+        public string GetSampleMethod_With_OAuth(string strUserName)
+        {
+            if (Authenticate(WebOperationContext.Current.IncomingRequest))
+            {
+                StringBuilder strReturnValue = new StringBuilder();
+                // return username prefixed as shown below
+                strReturnValue.Append(string.Format("You have entered userName as {0}", strUserName));
+                return strReturnValue.ToString();
+            }
+            else
+            {
+                WebOperationContext.Current.OutgoingResponse.StatusCode = HttpStatusCode.Unauthorized;
+                return "Unauthorized Request.";
+            }
+        }
+
+        bool Authenticate(IncomingWebRequestContext incomingRequest);
     }
 }
