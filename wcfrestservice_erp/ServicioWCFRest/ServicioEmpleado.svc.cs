@@ -132,51 +132,51 @@ namespace ServicioWCFRest
         }//
 
 
-        public List<Empleado> readAlloauth()
-        {
+        //public List<Empleado> readAlloauth()
+        //{
 
-            if (Authenticate(WebOperationContext.Current.IncomingRequest))
-            {
-                return readAll();
-            }
-            else
-            {
-                WebOperationContext.Current.OutgoingResponse.StatusCode = HttpStatusCode.Unauthorized;
-                // return "Unauthorized Request.";
-                return null;
-            }
+        //    if (Authenticate(WebOperationContext.Current.IncomingRequest))
+        //    {
+        //        return readAll();
+        //    }
+        //    else
+        //    {
+        //        WebOperationContext.Current.OutgoingResponse.StatusCode = HttpStatusCode.Unauthorized;
+        //        // return "Unauthorized Request.";
+        //        return null;
+        //    }
    
-        }//
+        //}
 
-        private bool Authenticate(IncomingWebRequestContext context)
-        {
-            bool Authenticated = false;
-            string normalizedUrl;
-            string normalizedRequestParameters;
-            //context.Headers
-            NameValueCollection pa = context.UriTemplateMatch.QueryParameters;
-            if (pa != null && pa["oauth_consumer_key"] != null)
-            {
-                // to get uri without oauth parameters
-                string uri = context.UriTemplateMatch.RequestUri.OriginalString.Replace
-                    (context.UriTemplateMatch.RequestUri.Query, "");
-                string consumersecret = "suryabhai";
-                OAuthBase oauth = new OAuthBase();
-                string hash = oauth.GenerateSignature(
-                    new Uri(uri),
-                    pa["oauth_consumer_key"],
-                    consumersecret,
-                    null, // totken
-                    null, //token secret
-                    "GET",
-                    pa["oauth_timestamp"],
-                    pa["oauth_nonce"],
-                    out normalizedUrl,
-                    out normalizedRequestParameters
-                    );
-                Authenticated = pa["oauth_signature"] == hash;
-            }
-            return Authenticated;
-        }
+        //private bool Authenticate(IncomingWebRequestContext context)
+        //{
+        //    bool Authenticated = false;
+        //    string normalizedUrl;
+        //    string normalizedRequestParameters;
+        //    //context.Headers
+        //    NameValueCollection pa = context.UriTemplateMatch.QueryParameters;
+        //    if (pa != null && pa["oauth_consumer_key"] != null)
+        //    {
+        //        // to get uri without oauth parameters
+        //        string uri = context.UriTemplateMatch.RequestUri.OriginalString.Replace
+        //            (context.UriTemplateMatch.RequestUri.Query, "");
+        //        string consumersecret = "suryabhai";
+        //        OAuthBase oauth = new OAuthBase();
+        //        string hash = oauth.GenerateSignature(
+        //            new Uri(uri),
+        //            pa["oauth_consumer_key"],
+        //            consumersecret,
+        //            null, // totken
+        //            null, //token secret
+        //            "GET",
+        //            pa["oauth_timestamp"],
+        //            pa["oauth_nonce"],
+        //            out normalizedUrl,
+        //            out normalizedRequestParameters
+        //            );
+        //        Authenticated = pa["oauth_signature"] == hash;
+        //    }
+        //    return Authenticated;
+        //}
     }
 }

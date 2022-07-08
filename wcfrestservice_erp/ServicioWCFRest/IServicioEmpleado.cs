@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
@@ -20,9 +21,9 @@ namespace ServicioWCFRest
 
 
 
-        [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "readAlloauth", ResponseFormat = WebMessageFormat.Json)]
-        List<Empleado> readAlloauth();
+        //[OperationContract]
+        //[WebInvoke(Method = "GET", UriTemplate = "readAlloauth", ResponseFormat = WebMessageFormat.Json)]
+        //List<Empleado> readAlloauth();
 
         //[FaultContract(typeof(ExcepcionLDS))]
         //[OperationContract]
@@ -53,25 +54,25 @@ namespace ServicioWCFRest
 
 
 
-        [OperationContract(Name = "GetSampleMethod_With_OAuth")]
-        [WebGet(UriTemplate = "GetSampleMethod_With_OAuth/inputStr/{name}")]
-        string GetSampleMethod_With_OAuth(string name);
-        public string GetSampleMethod_With_OAuth(string strUserName)
-        {
-            if (Authenticate(WebOperationContext.Current.IncomingRequest))
-            {
-                StringBuilder strReturnValue = new StringBuilder();
-                // return username prefixed as shown below
-                strReturnValue.Append(string.Format("You have entered userName as {0}", strUserName));
-                return strReturnValue.ToString();
-            }
-            else
-            {
-                WebOperationContext.Current.OutgoingResponse.StatusCode = HttpStatusCode.Unauthorized;
-                return "Unauthorized Request.";
-            }
-        }
+        //[OperationContract(Name = "GetSampleMethod_With_OAuth")]
+        //[WebGet(UriTemplate = "GetSampleMethod_With_OAuth/inputStr/{name}")]
+        //string GetSampleMethod_With_OAuth(string name);
+        //public string GetSampleMethod_With_OAuth(string strUserName)
+        //{
+        //    if (Authenticate(WebOperationContext.Current.IncomingRequest))
+        //    {
+        //        StringBuilder strReturnValue = new StringBuilder();
+        //        // return username prefixed as shown below
+        //        strReturnValue.Append(string.Format("You have entered userName as {0}", strUserName));
+        //        return strReturnValue.ToString();
+        //    }
+        //    else
+        //    {
+        //        WebOperationContext.Current.OutgoingResponse.StatusCode = HttpStatusCode.Unauthorized;
+        //        return "Unauthorized Request.";
+        //    }
+        //}
 
-        bool Authenticate(IncomingWebRequestContext incomingRequest);
+        //bool Authenticate(IncomingWebRequestContext incomingRequest);
     }
 }
