@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ServicioWCFRest.Model
+namespace ServicioWCFRest.DataAccess.Model
 {
     using System;
     using System.Collections.Generic;

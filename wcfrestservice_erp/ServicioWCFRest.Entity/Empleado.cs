@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 
-namespace ServicioWCFRest
+namespace ServicioWCFRest.Entity
 {
     [DataContract]
     public class Empleado

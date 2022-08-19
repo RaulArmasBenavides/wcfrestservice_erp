@@ -1,5 +1,8 @@
 ﻿using log4net;
+using ServicioWCFRest.DataAccess;
+using ServicioWCFRest.Entity;
 using ServicioWCFRest.Model;
+using ServicioWCFRest.Util;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -35,8 +38,8 @@ namespace ServicioWCFRest
 
 
 
-
-
+        ServicioEmpleadoDAO ser;
+             
         public bool create(Empleado empleado)
         {
             using (NeptunoEntities db = new NeptunoEntities())
@@ -118,17 +121,8 @@ namespace ServicioWCFRest
 
         public List<Empleado> readAll()
         {
-            using (NeptunoEntities db = new NeptunoEntities())
-            {
-                return db.Empleados.Select(em => new Empleado
-                {
-                    IdEmpleado = em.IdEmpleado,
-                    Apellidos = em.Apellidos,
-                    Nombre = em.Nombre,
-                    Cargo = em.Cargo,
-                    Direccion = em.Dirección
-                }).ToList();
-            }
+            ser = new ServicioEmpleadoDAO();
+            return ser.readAll();
         }//
 
 
