@@ -1,18 +1,11 @@
 ﻿using log4net;
 using ServicioWCFRest.DataAccess;
+using ServicioWCFRest.DataAccess.Model;
 using ServicioWCFRest.Entity;
-using ServicioWCFRest.Model;
-using ServicioWCFRest.Util;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
-using System.Net;
 using System.Reflection;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 
 namespace ServicioWCFRest
 {

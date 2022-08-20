@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data.Entity.Core.EntityClient;
-using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ServicioWCFRest.DataAccess.Model
-{
 {
     public class AccesoDB
     {
@@ -38,17 +31,13 @@ namespace ServicioWCFRest.DataAccess.Model
         public AccesoDB()
         {
             String hostName = Dns.GetHostName();
-           
             constconexion = new EntityConnectionStringBuilder();
-            
             constconexion.Provider = "System.Data.SqlClient";
+     
 
         }
 
-
-
-
-        public Boolean conexion()
+        public Boolean Conexion()
         {
             try
             {
@@ -65,26 +54,7 @@ namespace ServicioWCFRest.DataAccess.Model
             }
         }
 
-
-        public Boolean conexion()
-        {
-            try
-            {
-                //conectar = new MySqlConnection(cadenadesencriptada);
-                //System.Windows.Forms.MessageBox.Show("Conexion Establecida !!!");
-                //conectar.Open();
-                e = new NeptunoEntities(constconexion.ToString());
-               
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-                //System.Windows.Forms.MessageBox.Show("No se pudo conectar!!!");
-            }
-        }
-
-        public void creararchivo()
+        public void Creararchivo()
         {
             string cadena;
             string filename = @"C:\datos\feedback.ini";
@@ -96,7 +66,7 @@ namespace ServicioWCFRest.DataAccess.Model
             writer.Close();
         }
 
-        public void crearArchivoConNombre(string x)
+        public void CrearArchivoConNombre(string x)
         {
             string cadena;
             string filename = @"C:\datos\feedback.ini";
