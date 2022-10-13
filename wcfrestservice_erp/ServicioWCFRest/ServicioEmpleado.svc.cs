@@ -2,6 +2,7 @@
 using ServicioWCFRest.DataAccess;
 using ServicioWCFRest.DataAccess.Model;
 using ServicioWCFRest.Entity;
+using ServicioWCFRest.Entity.Log;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -114,6 +115,7 @@ namespace ServicioWCFRest
 
         public List<Empleado> readAll()
         {
+            LogNeptuno.LogMensaje("Probando el log");
             ser = new ServicioEmpleadoDAO();
             return ser.readAll();
         }//
