@@ -49,11 +49,14 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Empleado.cs" />
-    <Compile Include="Log\LogNeptuno.cs" />
+    <Compile Include="LogNeptuno.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Log\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

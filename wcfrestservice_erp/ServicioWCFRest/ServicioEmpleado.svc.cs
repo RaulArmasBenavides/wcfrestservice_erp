@@ -2,7 +2,6 @@
 using ServicioWCFRest.DataAccess;
 using ServicioWCFRest.DataAccess.Model;
 using ServicioWCFRest.Entity;
-using ServicioWCFRest.Entity.Log;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +24,7 @@ namespace ServicioWCFRest
 
         static ServicioEmpleado()
         {
-           // XmlConfigurator.Configure();
+            log4net.Config.XmlConfigurator.Configure();
         }
 
         #endregion
