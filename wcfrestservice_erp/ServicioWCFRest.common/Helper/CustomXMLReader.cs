@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Xml;
 
-namespace ServicioWCFRest.DataAccess.Util
+namespace ServicioWCFRest.common.Helper
 {
     public class CustomXMLReader
     {
@@ -14,13 +18,11 @@ namespace ServicioWCFRest.DataAccess.Util
             string constring = string.Empty;
             while (xtr.Read())
             {
-
                 if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "codurl")
                 {
 
                     constring = xtr.ReadElementContentAsString();
                 }
-
             }
             return constring;
         }
@@ -36,19 +38,16 @@ namespace ServicioWCFRest.DataAccess.Util
 
                 if (dtConfig == null)
                 {
-                    //MessageBox.Show("Datos nulos en archivo de configuración.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
                     return null;
                 }
                 if (dtConfig.Rows.Count <= 0)
                 {
-                    //MessageBox.Show("No existen datos en archivo de configuración.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
                     return null;
                 }
                 return dtConfig;
             }
             catch (Exception)
             {
-                //MessageBox.Show("No se pudo leer archivo de configuración.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
                 return null;
             }
         }
@@ -62,9 +61,11 @@ namespace ServicioWCFRest.DataAccess.Util
                     System.IO.File.Delete(ArchivoConfig);
                 }
 
-                XmlTextWriter Xml = new XmlTextWriter(ArchivoConfig, null);
-                Xml.Indentation = 4;
-                Xml.IndentChar = ' ';
+                XmlTextWriter Xml = new XmlTextWriter(ArchivoConfig, null)
+                {
+                    Indentation = 4,
+                    IndentChar = ' '
+                };
                 Xml.Formatting = (Formatting)Xml.Indentation;
                 Xml.WriteStartDocument();
                 Xml.WriteStartElement("Config");
@@ -92,11 +93,10 @@ namespace ServicioWCFRest.DataAccess.Util
                 Xml.WriteEndElement();
                 Xml.WriteEndElement();
                 Xml.Close();
-               // MessageBox.Show("Se actualizó configuración del sistema.", "Configuración", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
-               //MessageBox.Show("Error al actualizar configuración del sistema\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
+                throw ex;
             }
         }
 
