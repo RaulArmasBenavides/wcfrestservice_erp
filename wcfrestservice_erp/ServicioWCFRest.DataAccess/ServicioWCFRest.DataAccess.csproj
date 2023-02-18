@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="app.erp.rmab.common">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\run\app.erp.rmab.common.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -104,10 +107,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ServicioWCFRest.common\ServicioWCFRest.common.csproj">
-      <Project>{F82CA4C6-496B-45E0-B200-77C6814D330D}</Project>
-      <Name>ServicioWCFRest.common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ServicioWCFRest.Entity\ServicioWCFRest.Entity.csproj">
       <Project>{6dc2317f-413e-4f23-95f4-694c99bb5c23}</Project>
       <Name>ServicioWCFRest.Entity</Name>

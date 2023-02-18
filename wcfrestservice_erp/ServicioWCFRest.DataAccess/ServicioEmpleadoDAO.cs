@@ -1,4 +1,4 @@
-﻿using ServicioWCFRest.common.Helper;
+﻿using app.erp.rmab.common;
 using ServicioWCFRest.DataAccess.Model;
 using ServicioWCFRest.Entity;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ namespace ServicioWCFRest.DataAccess
     {
         public ServicioEmpleadoDAO()
         {
-            constconexion.ProviderConnectionString = CustomXMLReader.leerConexion();//ConfigurationManager.ConnectionStrings["neptuno"].ConnectionString;
+            constconexion.ProviderConnectionString = CustomXMLReader.leerConexion(1);//ConfigurationManager.ConnectionStrings["neptuno"].ConnectionString;
             constconexion.Metadata = "res://*/Model.Modelo.csdl|res://*/Model.Modelo.ssdl|res://*/Model.Modelo.msl";
             this.Conexion();
         }
