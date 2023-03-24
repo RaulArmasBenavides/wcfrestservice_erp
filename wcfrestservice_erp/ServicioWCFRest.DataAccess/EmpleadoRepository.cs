@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace ServicioWCFRest.DataAccess
 {
-    public class ServicioEmpleadoDAO : AccesoDB
+    public class EmpleadoRepository : AccesoDB
     {
-        public ServicioEmpleadoDAO()
+        public EmpleadoRepository()
         {
             constconexion.ProviderConnectionString = CustomXMLReader.leerConexion(1);//ConfigurationManager.ConnectionStrings["neptuno"].ConnectionString;
             constconexion.Metadata = "res://*/Model.Modelo.csdl|res://*/Model.Modelo.ssdl|res://*/Model.Modelo.msl";

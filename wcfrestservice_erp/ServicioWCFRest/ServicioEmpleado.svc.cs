@@ -31,7 +31,7 @@ namespace ServicioWCFRest
 
 
 
-        ServicioEmpleadoDAO ser;
+        EmpleadoRepository ser;
              
         public bool create(Empleado empleado)
         {
@@ -115,7 +115,7 @@ namespace ServicioWCFRest
         public List<Empleado> readAll()
         {
             LogNeptuno.LogMensaje("Probando el log");
-            ser = new ServicioEmpleadoDAO();
+            ser = new EmpleadoRepository();
             return ser.readAll();
         }//
 
