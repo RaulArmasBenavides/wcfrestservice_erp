@@ -1,4 +1,5 @@
-﻿using ServicioWCFRest.Entity;
+﻿using ServicioWCFRest.DataAccess.Model;
+using ServicioWCFRest.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

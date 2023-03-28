@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Empleado.cs" />
     <Compile Include="LogNeptuno.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

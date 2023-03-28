@@ -26,7 +26,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NeptunoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="EmpleadoEntity">
+        <EntityType Name="Empleado">
           <Key>
             <PropertyRef Name="IdEmpleado" />
           </Key>
@@ -41,7 +41,7 @@
           <Property Name="TelDomicilio" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="NeptunoEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Empleados" EntityType="NeptunoModel.EmpleadoEntity" />
+          <EntitySet Name="Empleados" EntityType="NeptunoModel.Empleado" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -50,7 +50,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="NeptunoModelStoreContainer" CdmEntityContainer="NeptunoEntities">
           <EntitySetMapping Name="Empleados">
-            <EntityTypeMapping TypeName="NeptunoModel.EmpleadoEntity">
+            <EntityTypeMapping TypeName="NeptunoModel.Empleado">
               <MappingFragment StoreEntitySet="Empleados">
                 <ScalarProperty Name="TelDomicilio" ColumnName="TelDomicilio" />
                 <ScalarProperty Name="País" ColumnName="País" />
@@ -78,8 +78,8 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>

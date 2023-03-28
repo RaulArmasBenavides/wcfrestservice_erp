@@ -12,7 +12,7 @@ namespace ServicioWCFRest.DataAccess.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class EmpleadoEntity
+    public partial class Empleado
     {
         public int IdEmpleado { get; set; }
         public string Apellidos { get; set; }

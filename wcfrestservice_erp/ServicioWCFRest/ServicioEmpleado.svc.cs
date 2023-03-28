@@ -39,12 +39,7 @@ namespace ServicioWCFRest
             {
                 try
                 {
-                    EmpleadoEntity emp = new EmpleadoEntity();
-                    emp.Apellidos = empleado.Apellidos;
-                    emp.Nombre = empleado.Nombre;
-                    emp.Cargo = empleado.Cargo;
-                    emp.Dirección = empleado.Direccion;
-                    db.Empleados.Add(emp);
+                    db.Empleados.Add(empleado);
                     db.SaveChanges();
                     return true;
                 }
@@ -53,7 +48,7 @@ namespace ServicioWCFRest
                     return false;
                 }
             }
-        }//
+        }
 
         public bool delete(Empleado empleado)
         {
@@ -62,7 +57,7 @@ namespace ServicioWCFRest
                 try
                 {
                     int cod = Convert.ToInt32(empleado.IdEmpleado);
-                    EmpleadoEntity emp = db.Empleados.Single(em => em.IdEmpleado == cod);
+                    Empleado emp = db.Empleados.Single(em => em.IdEmpleado == cod);
                     db.Empleados.Remove(emp);
                     db.SaveChanges();
                     return true;
@@ -72,7 +67,7 @@ namespace ServicioWCFRest
                     return false;
                 }
             }
-        }//
+        }
 
         public bool edit(Empleado empleado)
         {
@@ -81,11 +76,11 @@ namespace ServicioWCFRest
                 try
                 {
                     int cod = Convert.ToInt32(empleado.IdEmpleado);
-                    EmpleadoEntity emp = db.Empleados.Single(em => em.IdEmpleado == cod);
+                    Empleado emp = db.Empleados.Single(em => em.IdEmpleado == cod);
                     emp.Apellidos = empleado.Apellidos;
                     emp.Nombre = empleado.Nombre;
                     emp.Cargo = empleado.Cargo;
-                    emp.Dirección = empleado.Direccion;
+                    emp.Dirección = empleado.Dirección;
                     db.SaveChanges();
                     return true;
                 }
@@ -107,7 +102,7 @@ namespace ServicioWCFRest
                     Apellidos = em.Apellidos,
                     Nombre = em.Nombre,
                     Cargo = em.Cargo,
-                    Direccion = em.Dirección
+                    Dirección = em.Dirección
                 }).First();
             }
         }//

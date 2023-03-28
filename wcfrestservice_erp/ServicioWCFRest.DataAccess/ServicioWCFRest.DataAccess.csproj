@@ -46,6 +46,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -58,7 +59,7 @@
     <Compile Include="Model\AccesoDB.cs" />
     <Compile Include="Model\Class1.cs" />
     <Compile Include="Model\DataAccessFactory.cs" />
-    <Compile Include="Model\EmpleadoEntity.cs">
+    <Compile Include="Model\Empleado.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Modelo.Context.cs">

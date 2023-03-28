@@ -25,6 +25,6 @@ namespace ServicioWCFRest.DataAccess.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<EmpleadoEntity> Empleados { get; set; }
+        public virtual DbSet<Empleado> Empleados { get; set; }
     }
 }
