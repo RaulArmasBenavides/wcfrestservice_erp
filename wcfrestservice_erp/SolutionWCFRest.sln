@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31829.152
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CapaServicioRest", "CapaServicioRest", "{2F9789BA-7446-4DC1-8065-6D7A6DD94C5E}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioWCFRest.DataAccess", "ServicioWCFRest.DataAccess\ServicioWCFRest.DataAccess.csproj", "{DB7622FE-1271-4DF1-B9D3-42A47D042E46}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioWCFRest.Entity", "ServicioWCFRest.Entity\ServicioWCFRest.Entity.csproj", "{6DC2317F-413E-4F23-95F4-694C99BB5C23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioWCFRest.Business", "ServicioWCFRest.Business\ServicioWCFRest.Business.csproj", "{6BDC1D41-AC7F-438D-9CC2-105174F4259D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{6DC2317F-413E-4F23-95F4-694C99BB5C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DC2317F-413E-4F23-95F4-694C99BB5C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DC2317F-413E-4F23-95F4-694C99BB5C23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BDC1D41-AC7F-438D-9CC2-105174F4259D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BDC1D41-AC7F-438D-9CC2-105174F4259D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BDC1D41-AC7F-438D-9CC2-105174F4259D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BDC1D41-AC7F-438D-9CC2-105174F4259D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{EE0C9A58-F9EA-430D-8DA4-8D45A845CCC7} = {A6B107FC-0F4D-424C-A786-FD87905EB720}
 		{DB7622FE-1271-4DF1-B9D3-42A47D042E46} = {2F9789BA-7446-4DC1-8065-6D7A6DD94C5E}
 		{6DC2317F-413E-4F23-95F4-694C99BB5C23} = {2F9789BA-7446-4DC1-8065-6D7A6DD94C5E}
+		{6BDC1D41-AC7F-438D-9CC2-105174F4259D} = {2F9789BA-7446-4DC1-8065-6D7A6DD94C5E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {39477427-B8F5-4979-AF23-9556A741A603}

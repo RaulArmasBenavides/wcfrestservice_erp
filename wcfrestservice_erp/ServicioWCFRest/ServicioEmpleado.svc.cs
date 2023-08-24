@@ -1,6 +1,9 @@
 ﻿using log4net;
+using ServicioWCFRest.Business.Interfaces;
+using ServicioWCFRest.Business.Services;
 using ServicioWCFRest.DataAccess;
 using ServicioWCFRest.DataAccess.Model;
+using ServicioWCFRest.DataAccess.Repository;
 using ServicioWCFRest.Entity;
 using System;
 using System.Collections.Generic;
@@ -22,9 +25,10 @@ namespace ServicioWCFRest
 
         #region Configuración del Log
 
-        static ServicioEmpleado()
+        public ServicioEmpleado()
         {
             log4net.Config.XmlConfigurator.Configure();
+            _empleadoService = new EmpleadoService();
         }
 
         #endregion
@@ -32,6 +36,7 @@ namespace ServicioWCFRest
 
 
         EmpleadoRepository ser;
+        IEmpleadoService _empleadoService;
              
         public bool create(Empleado empleado)
         {
@@ -107,12 +112,10 @@ namespace ServicioWCFRest
             }
         }//
 
-        public List<Empleado> readAll()
+        public IEnumerable<Empleado> readAll()
         {
-            LogNeptuno.LogMensaje("Probando el log");
-            ser = new EmpleadoRepository();
-            return ser.readAll();
-        }//
+            return _empleadoService.readAll();
+        }  
 
 
         //public List<Empleado> readAlloauth()

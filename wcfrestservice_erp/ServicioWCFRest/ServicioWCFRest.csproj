@@ -118,6 +118,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ServicioWCFRest.Business\ServicioWCFRest.Business.csproj">
+      <Project>{6BDC1D41-AC7F-438D-9CC2-105174F4259D}</Project>
+      <Name>ServicioWCFRest.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ServicioWCFRest.DataAccess\ServicioWCFRest.DataAccess.csproj">
       <Project>{db7622fe-1271-4df1-b9d3-42a47d042e46}</Project>
       <Name>ServicioWCFRest.DataAccess</Name>

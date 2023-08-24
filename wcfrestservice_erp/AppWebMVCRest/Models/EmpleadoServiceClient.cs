@@ -13,7 +13,6 @@ namespace AppWebMVCRest.Models
     public class EmpleadoServiceClient
     {
         private string BASE_URL = "http://localhost:60938/ServicioEmpleado.svc/";
-
         public List<Empleado> readAll()
         {
             try
@@ -27,7 +26,7 @@ namespace AppWebMVCRest.Models
             {
                 return null; 
             }
-        }//
+        }
 
         public Empleado find(string id)
         {
@@ -43,7 +42,7 @@ namespace AppWebMVCRest.Models
             {
                 return null;
             }
-        }//
+        }
 
         public bool create(Empleado empleado)
         {
@@ -64,7 +63,7 @@ namespace AppWebMVCRest.Models
             {
                 return false;
             }
-        }//
+        }
 
         public bool edit(Empleado empleado)
         {
@@ -85,7 +84,7 @@ namespace AppWebMVCRest.Models
             {
                 return false;
             }
-        }//
+        }
 
         public bool delete(Empleado empleado)
         {
@@ -106,7 +105,6 @@ namespace AppWebMVCRest.Models
             {
                 return false;
             }
-        }//
-
+        }
     }
 }

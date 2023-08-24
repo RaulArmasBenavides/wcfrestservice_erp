@@ -19,9 +19,7 @@ namespace ServicioWCFRest
 
         [OperationContract]
         [WebInvoke(Method ="GET", UriTemplate = "readall", ResponseFormat = WebMessageFormat.Json)]
-        List<Empleado> readAll();
-
-
+        IEnumerable<Empleado> readAll();
 
         //[OperationContract]
         //[WebInvoke(Method = "GET", UriTemplate = "readAlloauth", ResponseFormat = WebMessageFormat.Json)]

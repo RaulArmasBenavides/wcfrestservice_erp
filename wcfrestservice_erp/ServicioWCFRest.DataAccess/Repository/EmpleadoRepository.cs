@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 
-namespace ServicioWCFRest.DataAccess
+namespace ServicioWCFRest.DataAccess.Repository
 {
     public class EmpleadoRepository : AccesoDB
     {
